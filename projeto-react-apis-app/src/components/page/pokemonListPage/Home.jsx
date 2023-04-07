@@ -3,9 +3,14 @@ import { PokemonCard } from '../../pokemonCard/PokemonCard'
 
 export function Home() {
     return (
-        <s.ContainerCards>
+        <s.Container>
             <s.Title>Todos Pokémons</s.Title>
-           {/*  <PokemonCard/> */}
-        </s.ContainerCards>
+            <s.ContainerCard>
+                <PokemonCard />
+                <PokemonCard />
+                <PokemonCard />
+                <PokemonCard />
+            </s.ContainerCard>
+        </s.Container>
     )
 }

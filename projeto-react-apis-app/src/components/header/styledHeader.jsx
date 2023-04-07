@@ -14,9 +14,9 @@ export const LogoPokedex = styled.img`
 `
 export const BtnPokedex = styled.button`
     position: absolute;
-    width: 287px;
-    height: 74px;
-    left: 60%;
+    width: 270px;
+    height: 70px;
+    left: 64%;
     top: 15%;
     transform: translate(90%, -75%);
     background: #33A4F5;
