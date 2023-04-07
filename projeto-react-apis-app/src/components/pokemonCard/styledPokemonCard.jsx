@@ -18,6 +18,8 @@ export const ImgPokemon = styled.img`
     position: absolute;
     right: 13px;
     bottom: 70px;
+    width: 193px;
+    height: 193px;
 `
 export const ContainerInformation = styled.div`
     display: flex;
