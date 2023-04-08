@@ -5,7 +5,6 @@ import Grass from '../../assets/img/cards/ability/grass.svg'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-/* import PokeTest from '../../../public/img/cards/pokemon/poke1.svg' */
 
 export function PokemonCard({pokemon}) {
     const { name, url } = pokemon
@@ -14,9 +13,7 @@ export function PokemonCard({pokemon}) {
     
     const getDataPokemon = async () => {
         try {
-            
             const res = await axios.get(url)
-            /* console.log(res.data.sprites.other["official-artwork"].front_default) */
             setId(res.data.id)
             setImage(res.data.sprites.other["official-artwork"].front_default)
 

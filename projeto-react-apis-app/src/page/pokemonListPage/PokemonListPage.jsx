@@ -1,10 +1,10 @@
-import * as s from './styledHome'
-import { PokemonCard } from '../../pokemonCard/PokemonCard'
+import * as s from './styledPokemonList'
+import { PokemonCard } from '../../components/pokemonCard/PokemonCard'
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 
-export function Home() {
+export function PokemonListPage() {
     const [pokemons, setPokemons] = useState([])
 
     const getAllPokemons = async () => {

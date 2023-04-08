@@ -46,6 +46,10 @@ export const NamePokemon = styled.h3`
     font-size: 2rem;
     line-height: 2.44rem;
     color: #FFFFFF;
+    
+    ::first-letter {
+        text-transform: uppercase;
+    }
 `
 export const ContainerAbility = styled.div`
     display: flex;
