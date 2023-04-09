@@ -11,6 +11,7 @@ export const LogoPokedex = styled.img`
     top: 50%;
     transform: translate(-50%, -50%);
     position: relative;
+    cursor: pointer;
 `
 export const BtnPokedex = styled.button`
     position: absolute;

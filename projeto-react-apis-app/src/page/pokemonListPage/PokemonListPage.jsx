@@ -3,6 +3,8 @@ import { PokemonCard } from '../../components/pokemonCard/PokemonCard'
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Header } from '../../components/header/Header'
 
 export function PokemonListPage() {
     const [pokemons, setPokemons] = useState([])
@@ -23,6 +25,8 @@ export function PokemonListPage() {
     }, [])
 
     return (
+        <>
+        <Header />
         <s.Container>
             <s.Title>Todos Pokémons</s.Title>
             <s.ContainerCard>
@@ -33,5 +37,6 @@ export function PokemonListPage() {
                 }
             </s.ContainerCard>
         </s.Container>
+        </>
     )
 }

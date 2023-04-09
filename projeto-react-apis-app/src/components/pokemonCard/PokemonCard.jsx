@@ -5,11 +5,15 @@ import Grass from '../../assets/img/cards/ability/grass.svg'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { goToPage } from '../../routes/coordinator'
 
 export function PokemonCard({pokemon}) {
     const { name, url } = pokemon
     const [id, setId] = useState("")
     const [image, setImage] = useState("")
+
+    const navigate = useNavigate()
     
     const getDataPokemon = async () => {
         try {
@@ -25,6 +29,10 @@ export function PokemonCard({pokemon}) {
     useEffect(() => {
         getDataPokemon()
     }, [])
+
+   /*  const goToDetails = (page) => {
+        navigate(`/page/${page}`)
+    } */
 
     return (
 
@@ -47,7 +55,7 @@ export function PokemonCard({pokemon}) {
             </s.ContainerInformation>
             <s.BackGroundImage src={BG} alt="" />
             <s.ImgPokemon src={image} alt="image pokemon" />
-            <s.Details>Detalhes</s.Details>
+            <s.Details onClick={() => goToPage(navigate, '/page/details')} >Detalhes</s.Details>
 
             <s.BtnCatch>Capturar!</s.BtnCatch>
 
