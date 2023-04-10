@@ -8,8 +8,8 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
 
-export function PokemonCard({pokemon}) {
-    const { name, url } = pokemon
+export function PokemonCard(props) {
+    const { pokemon } = props
     const [id, setId] = useState("")
     const [image, setImage] = useState("")
 
@@ -17,7 +17,7 @@ export function PokemonCard({pokemon}) {
     
     const getDataPokemon = async () => {
         try {
-            const res = await axios.get(url)
+            const res = await axios.get(pokemon.url)
             setId(res.data.id)
             setImage(res.data.sprites.other["official-artwork"].front_default)
 
@@ -40,7 +40,7 @@ export function PokemonCard({pokemon}) {
             <s.ContainerInformation>
                 <s.ContainerNameId>
                     <s.Id>#{id <= 9? '0'+id : id}</s.Id>
-                    <s.NamePokemon>{name}</s.NamePokemon>
+                    <s.NamePokemon>{pokemon.name}</s.NamePokemon>
                 </s.ContainerNameId>
                 <s.ContainerAbility>
                     <s.AbilityOne>
