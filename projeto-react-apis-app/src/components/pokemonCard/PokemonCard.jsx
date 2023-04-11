@@ -7,14 +7,16 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
+import Gotcha from '../../assets/img/cards/delete_add/gotcha.svg'
 
 export function PokemonCard(props) {
     const { pokemon } = props
     const [id, setId] = useState("")
     const [image, setImage] = useState("")
+    const [showCardGotcha, setShowCardGotcha] = useState(false)
 
     const navigate = useNavigate()
-    
+
     const getDataPokemon = async () => {
         try {
             const res = await axios.get(pokemon.url)
@@ -30,35 +32,37 @@ export function PokemonCard(props) {
         getDataPokemon()
     }, [])
 
-   /*  const goToDetails = (page) => {
-        navigate(`/page/${page}`)
-    } */
+    /*  const goToDetails = (page) => {
+         navigate(`/page/${page}`)
+     } */
 
     return (
+        <>
 
-        <s.ContainerCard>
-            <s.ContainerInformation>
-                <s.ContainerNameId>
-                    <s.Id>#{id <= 9? '0'+id : id}</s.Id>
-                    <s.NamePokemon>{pokemon.name}</s.NamePokemon>
-                </s.ContainerNameId>
-                <s.ContainerAbility>
-                    <s.AbilityOne>
-                        <s.ImgAbility src={Poison} alt="ability" />
-                        <s.NameAbility>Poison</s.NameAbility>
-                    </s.AbilityOne>
-                    <s.AbilityTwo>
-                        <s.ImgAbility src={Grass} alt="ability" />
-                        <s.NameAbility>Grass</s.NameAbility>
-                    </s.AbilityTwo>
-                </s.ContainerAbility>
-            </s.ContainerInformation>
-            <s.BackGroundImage src={BG} alt="" />
-            <s.ImgPokemon src={image} alt="image pokemon" />
-            <s.Details onClick={() => goToPage(navigate, '/page/details')} >Detalhes</s.Details>
+            <s.ContainerCard>
+                <s.ContainerInformation>
+                    <s.ContainerNameId>
+                        <s.Id>#{id <= 9 ? '0' + id : id}</s.Id>
+                        <s.NamePokemon>{pokemon.name}</s.NamePokemon>
+                    </s.ContainerNameId>
+                    <s.ContainerAbility>
+                        <s.AbilityOne>
+                            <s.ImgAbility src={Poison} alt="ability" />
+                            <s.NameAbility>Poison</s.NameAbility>
+                        </s.AbilityOne>
+                        <s.AbilityTwo>
+                            <s.ImgAbility src={Grass} alt="ability" />
+                            <s.NameAbility>Grass</s.NameAbility>
+                        </s.AbilityTwo>
+                    </s.ContainerAbility>
+                </s.ContainerInformation>
+                <s.BackGroundImage src={BG} alt="" />
+                <s.ImgPokemon src={image} alt="image pokemon" />
+                <s.Details onClick={() => goToPage(navigate, '/page/details')} >Detalhes</s.Details>
 
-            <s.BtnCatch>Capturar!</s.BtnCatch>
-
-        </s.ContainerCard>
+                <s.BtnCatch onClick={() => setShowCardGotcha(true)} >Capturar!</s.BtnCatch>
+                {/* {showCardGotcha && <img src={Gotcha} alt='pokemon capturado' />} */}
+            </s.ContainerCard>
+        </>
     )
 }

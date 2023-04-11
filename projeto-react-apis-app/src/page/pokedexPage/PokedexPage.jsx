@@ -1,6 +1,6 @@
 import { Header } from "../../components/header/Header";
 import { PokemonCard } from '../../components/pokemonCard/PokemonCard';
-import { useRequestData } from '../../assets/hooks/useRequestData'
+import { useRequestData } from '../../hooks/useRequestData'
 import * as s from './styledPokedex'
 import { Title, Container, ContainerCard } from "../pokemonListPage/styledPokemonList"
 
