@@ -7,13 +7,13 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
-import Gotcha from '../../assets/img/cards/delete_add/gotcha.svg'
+
 
 export function PokemonCard(props) {
     const { pokemon } = props
     const [id, setId] = useState("")
     const [image, setImage] = useState("")
-    const [showCardGotcha, setShowCardGotcha] = useState(false)
+    
 
     const navigate = useNavigate()
 
@@ -32,10 +32,7 @@ export function PokemonCard(props) {
         getDataPokemon()
     }, [])
 
-    /*  const goToDetails = (page) => {
-         navigate(`/page/${page}`)
-     } */
-
+   
     return (
         <>
 

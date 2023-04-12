@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import { Header } from './components/header/Header'
 import { Router } from './routes/Router'
+import { GlobalContext } from './context/GlobalContext'
+import { GlobalState } from './context/GlobalState'
+
 
 function App() {
-  
+  const context = GlobalState()
+
   return (
     <>
-      <Router/>
+      <GlobalContext.Provider value={context}>
+        <Router />
+      </GlobalContext.Provider>
     </>
   )
 }

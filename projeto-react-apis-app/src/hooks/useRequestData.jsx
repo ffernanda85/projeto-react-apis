@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContext'
 import axios from "axios";
+import { BASE_URL } from '../assets/constant/constant';
+
 
 export function useRequestData() {
-    const [pokemons, setPokemons] = useState([])
+    /* const [pokemons, setPokemons] = useState([]) */
+    const context = useContext(GlobalContext)
 
     const getAllPokemons = async () => {
         try {
-            const res = await axios.get('https://pokeapi.co/api/v2/pokemon/')
-            setPokemons(res.data.results)
+            const res = await axios.get(BASE_URL)
+            context.setPokemons(res.data.results)
 
         } catch (error) {
             console.log(error.response)
@@ -18,5 +22,5 @@ export function useRequestData() {
         getAllPokemons()
     }, [])
 
-    return pokemons
+    return context.pokemons
 }
