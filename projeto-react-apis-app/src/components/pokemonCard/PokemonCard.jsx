@@ -3,18 +3,20 @@ import BG from '../../assets/img/cards/pngwing2.svg'
 import Poison from '../../assets/img/cards/ability/poison.svg'
 import Grass from '../../assets/img/cards/ability/grass.svg'
 import axios from 'axios'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
+import { GlobalContext } from '../../context/GlobalContext'
+import { useLocation } from 'react-router-dom'
 
 
 export function PokemonCard(props) {
     const { pokemon } = props
     const [id, setId] = useState("")
     const [image, setImage] = useState("")
-    
+    const [isOn, setIsOn] = useState(false)
 
+    const context = useContext(GlobalContext)
     const navigate = useNavigate()
 
     const getDataPokemon = async () => {
@@ -35,7 +37,6 @@ export function PokemonCard(props) {
    
     return (
         <>
-
             <s.ContainerCard>
                 <s.ContainerInformation>
                     <s.ContainerNameId>
@@ -55,10 +56,13 @@ export function PokemonCard(props) {
                 </s.ContainerInformation>
                 <s.BackGroundImage src={BG} alt="" />
                 <s.ImgPokemon src={image} alt="image pokemon" />
-                <s.Details onClick={() => goToPage(navigate, '/page/details')} >Detalhes</s.Details>
-
-                <s.BtnCatch onClick={() => setShowCardGotcha(true)} >Capturar!</s.BtnCatch>
-                {/* {showCardGotcha && <img src={Gotcha} alt='pokemon capturado' />} */}
+                <s.Details onClick={() => goToPage(navigate, '/page/details')}>Detalhes</s.Details>
+                {
+                    location.pathname === '/'?
+                        <s.BtnCatch isOn={false} onClick={() => { context.capture(pokemon) }} > Capturar!</s.BtnCatch>
+                        :
+                        <s.BtnCatch isOn={true} color={'#FF6262'} colorText={'#FFFFFF'} onClick={() => { context.delete(pokemon) }} > Excluir</s.BtnCatch>
+}
             </s.ContainerCard>
         </>
     )

@@ -3,21 +3,29 @@ import { useState } from "react";
 export function GlobalState() {
     const [modal, setModal] = useState(false)
     const [action, setAction] = useState("")
-    const [id, setId] = useState("")
-    const [image, setImage] = useState("")
     const [pokemons, setPokemons] = useState([])
+    const [pokedex, setPokedex] = useState([])
 
-
+    const capture = (pokemon) => {
+        const test = pokedex.some((e) => e.name === pokemon.name)
+        
+        if (test) {
+            return
+        }
+        setPokedex([...pokedex, pokemon])
+        setAction("capture")
+        setModal(true)
+    }
+    
     return {
         modal,
         setModal,
         action,
         setAction,
-        id,
-        setId,
-        image,
-        setImage,
         pokemons,
-        setPokemons
+        setPokemons,
+        pokedex,
+        setPokedex,
+        capture
     }
 }

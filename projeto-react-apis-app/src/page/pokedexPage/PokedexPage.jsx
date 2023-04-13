@@ -1,11 +1,13 @@
 import { Header } from "../../components/header/Header";
 import { PokemonCard } from '../../components/pokemonCard/PokemonCard';
-import { useRequestData } from '../../hooks/useRequestData'
 import * as s from './styledPokedex'
 import { Title, Container, ContainerCard } from "../pokemonListPage/styledPokemonList"
+import { GlobalContext } from "../../context/GlobalContext";
+import { useContext } from "react";
+
 
 export function PokedexPage() {
-    const pokemons = useRequestData()
+    const context = useContext(GlobalContext)
 
     return (
         <>
@@ -14,8 +16,8 @@ export function PokedexPage() {
                 <Title>Meus Pokémons</Title>
                 <ContainerCard>
                     {
-                        pokemons.map(pokemon => {
-                            return <PokemonCard key={pokemon.name} pokemon={pokemon} />
+                        context.pokedex.map((pokemon, index) => {
+                            return <PokemonCard key={index} pokemon={pokemon} />
                         })
                     }
                 </ContainerCard>

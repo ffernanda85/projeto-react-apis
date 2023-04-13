@@ -94,7 +94,8 @@ export const BtnCatch = styled.button`
     padding: 4px 10px;
     width: 146px;
     height: 38px;
-    background: #FFFFFF;
+    background-color: ${props => props.isOn ? '#FF6262' : '#FFFFFF'};
+    color: ${props => props.isOn ? '#FFFFFF' : '#0F0F0F' } ;
     border-radius: 8px;
     border: none;
     font-family: 'Poppins';
@@ -103,8 +104,8 @@ export const BtnCatch = styled.button`
     cursor: pointer;
 
     :hover {
-        background-color: black;
-        color: #FFFFFF;
+        background-color: ${props => props.isOn ? '#FFFFFF' : '#0F0F0F'};
+        color: ${ props => props.isOn ? '#FF6262' : '#FFFFFF' } ;
     }
 `
 export const Details = styled.p`

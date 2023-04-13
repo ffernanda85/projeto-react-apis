@@ -64,4 +64,5 @@ export const BtnDeletePokemon = styled.button`
     font-size: 1rem;
     line-height: 1.5rem;
     color: #FFFFFF;
+    cursor: pointer;
 `
