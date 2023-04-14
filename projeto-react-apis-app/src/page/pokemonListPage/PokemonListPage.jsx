@@ -9,7 +9,6 @@ import { Modal } from '../../components/modal/Modal'
 
 
 export function PokemonListPage() {
-
     const context = useContext(GlobalContext)
 
     const getAllPokemons = async () => {
@@ -26,7 +25,6 @@ export function PokemonListPage() {
         getAllPokemons()
     }, [])
 
-    
     return (
         <>
             <Header />
@@ -35,10 +33,9 @@ export function PokemonListPage() {
                 <Modal />
                 <s.ContainerCard>
                     {
-                        context.pokemons.filter((pokemon) => pokemon.name !== context.pokedex.name)
-                            .map((pokemon, index) => {
-                            return <PokemonCard key={index} pokemon={pokemon} />
-                        })
+                        context.pokemons.map((pokemon) => {
+                                return <PokemonCard key={pokemon.name} pokemon={pokemon} />
+                            })
                     }
                 </s.ContainerCard>
 

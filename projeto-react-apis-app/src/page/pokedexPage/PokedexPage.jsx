@@ -1,9 +1,9 @@
 import { Header } from "../../components/header/Header";
 import { PokemonCard } from '../../components/pokemonCard/PokemonCard';
 import * as s from './styledPokedex'
-import { Title, Container, ContainerCard } from "../pokemonListPage/styledPokemonList"
 import { GlobalContext } from "../../context/GlobalContext";
 import { useContext } from "react";
+import { Modal } from "../../components/modal/Modal";
 
 
 export function PokedexPage() {
@@ -12,16 +12,17 @@ export function PokedexPage() {
     return (
         <>
             <Header />
-            <Container>
-                <Title>Meus Pokémons</Title>
-                <ContainerCard>
+            <s.Container>
+                <s.Title>Meus Pokémons</s.Title>
+                <Modal/>
+                <s.ContainerCard>
                     {
-                        context.pokedex.map((pokemon, index) => {
-                            return <PokemonCard key={index} pokemon={pokemon} />
+                        context.pokedex.map((pokemon) => {
+                            return <PokemonCard key={pokemon.name} pokemon={pokemon} />
                         })
                     }
-                </ContainerCard>
-            </Container>
+                </s.ContainerCard>
+            </s.Container>
         </>
     )
 }

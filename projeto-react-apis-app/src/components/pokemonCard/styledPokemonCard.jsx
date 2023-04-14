@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContainerCard = styled.div`
-    background: #729F92;
+    background-color: ${props => props.color ? props.color :  '#729F92'  } ;
     border-radius: 12px;
     width: 440px;
     height: 210px;
@@ -70,17 +70,8 @@ export const AbilityOne = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #AD61AE;
-    border: 1px dashed rgba(255, 255, 255, 0.47);
-    border-radius: 8px;
-    width: 99px;
-    height: 31px;
-`
-export const AbilityTwo = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #70B873;
+    background-image: url(${({ img }) => img}) no-repeat;
+    background-color: ${({ color }) => color};
     border: 1px dashed rgba(255, 255, 255, 0.47);
     border-radius: 8px;
     width: 99px;

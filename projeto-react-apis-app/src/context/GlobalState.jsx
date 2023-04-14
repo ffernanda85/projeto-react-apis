@@ -7,14 +7,20 @@ export function GlobalState() {
     const [pokedex, setPokedex] = useState([])
 
     const capture = (pokemon) => {
-        const test = pokedex.some((e) => e.name === pokemon.name)
-        
-        if (test) {
-            return
-        }
+        const newPokemon = pokemons.filter(e => e.name !== pokemon.name)
+
+        setPokemons(newPokemon)
         setPokedex([...pokedex, pokemon])
-        setAction("capture")
         setModal(true)
+        setAction("capture")
+    }
+
+    const del = (pokemon) => {
+        const copyPokedex = pokedex.filter(pokedex => pokedex.name !== pokemon.name)
+
+        setModal(true)
+        setAction("delete")
+        setPokedex(copyPokedex)
     }
     
     return {
@@ -26,6 +32,7 @@ export function GlobalState() {
         setPokemons,
         pokedex,
         setPokedex,
-        capture
+        capture,
+        del
     }
 }
