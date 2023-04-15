@@ -7,7 +7,6 @@ import { BASE_URL } from '../../constant/constant'
 import axios from 'axios'
 import { Modal } from '../../components/modal/Modal'
 
-
 export function PokemonListPage() {
     const context = useContext(GlobalContext)
 

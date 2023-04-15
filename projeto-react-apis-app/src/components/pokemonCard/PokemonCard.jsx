@@ -48,18 +48,16 @@ export function PokemonCard(props) {
                         <s.NamePokemon>{pokemon.name}</s.NamePokemon>
                     </s.ContainerNameId>
                     <s.ContainerAbility>
-                        {types.length && types.map((element, index) => {
-                            const nameAbility = abilities.find((ability) => {
-                                ability.type === element.type.name
-                            })
+                        {!!types.length &&
+                            types.map((e, index) => {
+                                const ability = abilities.find(
+                                    (ability) => ability.type === e.type.name
+                                );
                             return (
-                                <s.AbilityOne key={index} {...nameAbility} >
-                                    <s.ImgAbility src={abilities.img} alt="" />
-                                    <s.NameAbility>{ element.type.name }</s.NameAbility>
+                                <s.AbilityOne key={index} {...ability} >
+                                    <s.NameAbility>{ e.type.name }</s.NameAbility>
                                 </s.AbilityOne>
-                            )
-
-                        })
+                            )})
                         }
                     </s.ContainerAbility>
                 </s.ContainerInformation>

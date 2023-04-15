@@ -62,16 +62,18 @@ export const NameAbility = styled.p`
     font-size: .875rem;
     line-height: 1.3125rem;
     color: #FFFFFF;
-`
-export const ImgAbility = styled.img`
+    margin-left: 40px;
+    margin-right: 8px;
     
+    ::first-letter {
+        text-transform: uppercase;
+    }
 `
 export const AbilityOne = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-image: url(${({ img }) => img}) no-repeat;
-    background-color: ${({ color }) => color};
+    background: url(${({ img }) => img}) no-repeat 10% center ${({ color }) => color};
     border: 1px dashed rgba(255, 255, 255, 0.47);
     border-radius: 8px;
     width: 99px;
