@@ -10,7 +10,7 @@ import { Modal } from '../../components/modal/Modal'
 export function PokemonListPage() {
     const context = useContext(GlobalContext)
 
-    const getAllPokemons = async () => {
+    /* const getAllPokemons = async () => {
         try {
             const res = await axios.get(BASE_URL)
             context.setPokemons(res.data.results)
@@ -22,7 +22,7 @@ export function PokemonListPage() {
 
     useEffect(() => {
         getAllPokemons()
-    }, [])
+    }, []) */
 
     return (
         <>
@@ -31,8 +31,9 @@ export function PokemonListPage() {
                 <s.Title>Todos Pokémons</s.Title>
                 <Modal />
                 <s.ContainerCard>
-                    {
-                        context.pokemons.map((pokemon) => {
+                    {//testar fazer um sort para ordenar os pokemons pelo seus Ids
+                        context.pokemons.filter(pokemon => !pokemon.isPokedex)
+                            .map((pokemon) => {
                                 return <PokemonCard key={pokemon.name} pokemon={pokemon} />
                             })
                     }

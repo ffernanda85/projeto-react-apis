@@ -37,7 +37,7 @@ export function PokemonCard(props) {
 
     useEffect(() => {
         getDataPokemon()
-    }, [])
+    }, [context.pokedex, props])
 
     return (
         <>
@@ -49,12 +49,12 @@ export function PokemonCard(props) {
                     </s.ContainerNameId>
                     <s.ContainerAbility>
                         {!!types.length &&
-                            types.map((e, index) => {
+                            types.map((e) => {
                                 const ability = abilities.find(
                                     (ability) => ability.type === e.type.name
                                 );
                             return (
-                                <s.AbilityOne key={index} {...ability} >
+                                <s.AbilityOne key={e.type.name} {...ability} >
                                     <s.NameAbility>{ e.type.name }</s.NameAbility>
                                 </s.AbilityOne>
                             )})

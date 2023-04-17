@@ -17,7 +17,8 @@ export function PokedexPage() {
                 <Modal/>
                 <s.ContainerCard>
                     {
-                        context.pokedex.map((pokemon) => {
+                        context.pokemons.filter(pokemon => pokemon.isPokedex)
+                            .map((pokemon) => {
                             return <PokemonCard key={pokemon.name} pokemon={pokemon} />
                         })
                     }

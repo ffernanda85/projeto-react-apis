@@ -1,4 +1,6 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "../constant/constant";
 
 export function GlobalState() {
     const [modal, setModal] = useState(false)
@@ -6,22 +8,39 @@ export function GlobalState() {
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
 
-    const capture = (pokemon) => {
-        const newPokemon = pokemons.filter(e => e.name !== pokemon.name)
+    const getAllPokemons = async () => {
+        try {
+            const res = await axios.get(BASE_URL)
+            setPokemons(res.data.results)
 
-        setPokemons(newPokemon)
+        } catch (error) {
+            console.log(error.response)
+        }
+    }
+
+    useEffect(() => {
+        getAllPokemons()
+    }, [])
+
+    const capture = (pokemon) => {
+        /* const newPokemon = pokemons.filter(e => e.name !== pokemon.name) */
+        pokemon.isPokedex = true
+        /* setPokemons(newPokemon) */
         setPokedex([...pokedex, pokemon])
         setModal(true)
         setAction("capture")
     }
 
     const del = (pokemon) => {
-        const copyPokedex = pokedex.filter(pokedex => pokedex.name !== pokemon.name)
+        /* const copyPokedex = pokedex.filter(pokedex => pokedex.name !== pokemon.name) */
+        pokemon.isPokedex = false
 
+        /* setPokemons([...pokemons, pokemon]) */
         setModal(true)
         setAction("delete")
-        setPokedex(copyPokedex)
+        /* setPokedex(copyPokedex) */
     }
+
     
     return {
         modal,
