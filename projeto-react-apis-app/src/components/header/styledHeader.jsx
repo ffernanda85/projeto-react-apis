@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
     height: 25vh;
-    width: 100%;
+    max-width: 100vw;
     background-color:  #FFFFFF;
     position: relative;
 `

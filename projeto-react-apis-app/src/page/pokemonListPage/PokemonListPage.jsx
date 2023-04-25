@@ -1,11 +1,10 @@
 import * as s from './styledPokemonList'
 import { PokemonCard } from '../../components/pokemonCard/PokemonCard'
 import { Header } from '../../components/header/Header'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
-import { BASE_URL } from '../../constant/constant'
-import axios from 'axios'
 import { Modal } from '../../components/modal/Modal'
+
 
 export function PokemonListPage() {
     const context = useContext(GlobalContext)
@@ -38,7 +37,6 @@ export function PokemonListPage() {
                             })
                     }
                 </s.ContainerCard>
-
             </s.Container>
         </>
     )

@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     max-width:100vw;
+    width: 1440px;
     min-height: 100vh;
     margin: 3.75rem 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 3.45rem;
+    background-color:  #5E5E5E;
 `
 export const Title = styled.h1`
     font-family: 'Poppins';
