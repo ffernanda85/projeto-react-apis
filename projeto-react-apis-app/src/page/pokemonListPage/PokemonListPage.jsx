@@ -26,9 +26,9 @@ export function PokemonListPage() {
     return (
         <>
             <Header />
+            <Modal />
             <s.Container>
                 <s.Title>Todos Pokémons</s.Title>
-                <Modal />
                 <s.ContainerCard>
                     {//testar fazer um sort para ordenar os pokemons pelo seus Ids
                         context.pokemons.filter(pokemon => !pokemon.isPokedex)
