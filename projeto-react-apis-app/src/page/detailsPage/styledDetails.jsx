@@ -23,22 +23,17 @@ export const ContainerCardDetail = styled.div`
     width: 1389px;
     height: 663px;
     display: flex;
-    //justify-content: center;
     position: relative;
-    //gap: 2rem;
+    padding: 1.625rem 2.8125rem;
 `
 export const ContainerBoxOne = styled.div`
-    width: 50%;
     display: flex;
-    gap: 2rem;
-    //justify-content: flex-start;
+    gap: 2.125rem;
 `
 export const ContainerImgPokemon = styled.div`
    display: flex;
    flex-direction: column;
-   justify-content: space-evenly;
-   align-items: center;
-   gap: 1.2rem;
+   justify-content: space-between;
 `
 export const BoxImgFront = styled.div`
     width: 282px;
@@ -58,18 +53,11 @@ export const ImgFront = styled.img`
 export const ImgBack = styled.img`
     
 `
-export const ContainerBoxTwo = styled.div`
-    width: 50%;
-    display: flex;
-    gap: 2rem;
-    //justify-content: space-evenly;
-`
 export const ContainerBaseStats = styled.div`
     width: 343px;
     height: 613px;
-    background: #FFFFFF;
+    background: rgb(255, 255, 255);
     border-radius: 12px;
-    align-self: center;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -83,17 +71,14 @@ export const TitleBaseStats = styled.h3`
     color: #000000;
 `
 export const BoxStats = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
     font-family: 'Inter';
+    line-height: 2rem;
 `
 export const ContainerBox = styled.div`
-    //width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 1.2rem;
+    justify-content: space-between;
+    padding-left: 2.125rem;
 `
 export const BoxMoves = styled.div`
     width: 292px;
@@ -121,7 +106,6 @@ export const BoxAbilites = styled.div`
     
 `
 export const ContainerPokemon = styled.div`
-   
     
 `
 export const ImgPokemon = styled.img`

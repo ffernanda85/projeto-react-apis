@@ -3,7 +3,6 @@ import { Modal } from "../../components/modal/Modal";
 import * as s from "./styledDetails"
 import BG from "../../assets/img/cards/pngwing2.svg"
 import Poke from "../../assets/img/cards/pokemon/poke1.svg"
-import { Container } from "../../Container";
 
 export function DetailsPage() {
     return (
@@ -14,6 +13,7 @@ export function DetailsPage() {
                 <s.Title>Detalhes</s.Title>
 
                 <s.ContainerCardDetail >
+
                     <s.ContainerBoxOne>
                         <s.ContainerImgPokemon>
                             <s.BoxImgFront> <s.ImgFront src="" alt="" /> </s.BoxImgFront>
@@ -32,9 +32,6 @@ export function DetailsPage() {
                                 <p>Total</p>
                             </s.BoxStats>
                         </s.ContainerBaseStats>
-                    </s.ContainerBoxOne>
-                   
-                    <s.ContainerBoxTwo>
 
                         <s.ContainerBox>
                             <s.BoxAbilites>
@@ -45,11 +42,12 @@ export function DetailsPage() {
                             <s.BoxMoves></s.BoxMoves>
                         </s.ContainerBox>
 
-                        <s.ContainerPokemon>
-                            <s.ImgPokemon src={Poke} alt="" />
-                        </s.ContainerPokemon>
+                    </s.ContainerBoxOne>
 
-                    </s.ContainerBoxTwo>
+
+                    <s.ContainerPokemon>
+                        <s.ImgPokemon src={Poke} alt="" />
+                    </s.ContainerPokemon>
 
                 </s.ContainerCardDetail>
 
