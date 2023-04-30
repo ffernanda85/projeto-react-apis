@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
 import { GlobalContext } from '../../context/GlobalContext'
 import { useLocation } from 'react-router-dom'
-import { abilities } from '../types/abilities'
+import { abilities } from '../../types/abilities'
 
 
 export function PokemonCard(props) {
@@ -63,7 +63,7 @@ export function PokemonCard(props) {
                 </s.ContainerInformation>
                 <s.BackGroundImage src={BG} alt="" />
                 <s.ImgPokemon src={image} alt="image pokemon" />
-                <s.Details onClick={() => goToPage(navigate, '/page/details')}>Detalhes</s.Details>
+                <s.Details onClick={() => goToPage(navigate, `/details/${pokemon.name}`)}>Detalhes</s.Details>
                 {
                     location.pathname === '/' ?
                         <s.BtnCatch isOn={false} onClick={() => { context.capture(pokemon) }} > Capturar!</s.BtnCatch>

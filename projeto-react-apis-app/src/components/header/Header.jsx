@@ -18,10 +18,10 @@ export function Header() {
                     <s.HeaderContainer>
                         <s.LogoPokedex onClick={() => goToPage(navigate, '/')} src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="pokelogo" />
 
-                        <s.BtnPokedex onClick={() => goToPage(navigate, '/page/pokedex')} >Pokédex</s.BtnPokedex>
+                        <s.BtnPokedex onClick={() => goToPage(navigate, '/pokedex')} >Pokédex</s.BtnPokedex>
                     </s.HeaderContainer>
                     :
-                    location.pathname === '/page/pokedex' ?
+                    location.pathname === '/pokedex' ?
 
                         <s.HeaderContainer>
                             <s.TitlePokedexPage onClick={() => goToPage(navigate, '/')} >Todos Pokémons</s.TitlePokedexPage>
