@@ -85,20 +85,27 @@ export const BoxStats = styled.div`
 `
 export const Stat = styled.div`
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: auto;
 `
+export const TotalStatContainer = styled.div`
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+`
 export const TitleStat = styled.div`
-    grid-column: 2;
+    text-align: right;
     ::first-letter {
             text-transform: uppercase;
         }
 `
 export const ValueStat = styled.div`
-    
+    text-align: right;
+    margin-right: 1rem;
 `
 export const Table = styled.div`
-    width: 200px;
+    width: 150px;
     height: 15px;
     border-radius: 12px;
     background-color: orange;

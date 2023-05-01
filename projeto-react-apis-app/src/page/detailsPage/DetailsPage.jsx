@@ -27,9 +27,9 @@ export function DetailsPage() {
         try {
             const res = await axios.get(URL)
 
-           // console.log(res.data)
-            console.log("stats:", res.data.stats)
-            
+            console.log(res.data)
+            //console.log("stats:", res.data.stats)
+
             const dataMove = res.data.moves.slice(0, 4)
 
             setImgFront(res.data.sprites.front_default)
@@ -48,16 +48,10 @@ export function DetailsPage() {
         details(params.namePokemon)
     }, [])
 
+    console.log(stats)
+    //const initialValue = 
+    const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
 
-   /*  const renderStats = stats.map((stat, index) => {
-        return (
-            <div key={index}>
-                <p>{stat.stat.name}</p>
-                <p>{stat.base_stat}</p>
-            </div>
-        )
-    }) */
-    
     return (
         <>
             <Header />
@@ -78,21 +72,21 @@ export function DetailsPage() {
                             <s.BoxStats>
 
                                 {
-                                    stats.map((item, index) =>
-                                    {
+                                    stats.map((item, index) => {
                                         return (
                                             <s.Stat key={index}>
-                                                <s.TitleStat>{item.stat.name}</s.TitleStat>
+                                                <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
                                                 <s.ValueStat>{item.base_stat}</s.ValueStat>
                                                 <s.Table></s.Table>
                                             </s.Stat>
                                         )
-                                    }                                    
-                                        
-                                    )
-                                    
+                                    })
                                 }
-                               <p>Total {stats.base_stat}</p>
+                                <s.TotalStatContainer>
+                                    <s.TitleStat>Total</s.TitleStat>
+                                    <s.ValueStat>{TotalBaseStat}</s.ValueStat>
+                                </s.TotalStatContainer>
+
                             </s.BoxStats>
                         </s.ContainerBaseStats>
 
