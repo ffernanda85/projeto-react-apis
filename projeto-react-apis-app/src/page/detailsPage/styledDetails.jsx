@@ -106,10 +106,10 @@ export const ValueStat = styled.div`
     margin-right: 1rem;
 `
 export const Table = styled.div`
-    width: 150px;
+    width: ${({base})=> base}%;
     height: 12px;
     border-radius: 12px;
-    background-color: orange;
+    background-color: ${({base})=> base <= 50 ? '#ff7c2e' : '#ffdd69' } ;
 `
 export const ContainerBox = styled.div`
     display: flex;

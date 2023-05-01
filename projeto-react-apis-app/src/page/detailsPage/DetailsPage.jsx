@@ -77,7 +77,7 @@ export function DetailsPage() {
                                                 <s.Stat key={index}>
                                                     <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
                                                     <s.ValueStat>{item.base_stat}</s.ValueStat>
-                                                    <s.Table></s.Table>
+                                                    <s.Table base={item.base_stat} ></s.Table>
                                                 </s.Stat>
                                             )
                                         })
