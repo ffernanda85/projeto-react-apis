@@ -51,7 +51,7 @@ export function DetailsPage() {
     console.log(stats)
     //const initialValue = 
     const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
-
+   
     return (
         <>
             <Header />
@@ -59,7 +59,7 @@ export function DetailsPage() {
                 <Modal />
                 <s.Title>Detalhes</s.Title>
 
-                <s.ContainerCardDetail >
+                <s.ContainerCardDetail BG={BG}>
 
                     <s.ContainerBoxOne>
                         <s.ContainerImgPokemon>
@@ -70,23 +70,22 @@ export function DetailsPage() {
                         <s.ContainerBaseStats>
                             <s.TitleBaseStats>Base stats</s.TitleBaseStats>
                             <s.BoxStats>
-
-                                {
-                                    stats.map((item, index) => {
-                                        return (
-                                            <s.Stat key={index}>
-                                                <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
-                                                <s.ValueStat>{item.base_stat}</s.ValueStat>
-                                                <s.Table></s.Table>
-                                            </s.Stat>
-                                        )
-                                    })
-                                }
-                                <s.TotalStatContainer>
-                                    <s.TitleStat>Total</s.TitleStat>
-                                    <s.ValueStat>{TotalBaseStat}</s.ValueStat>
-                                </s.TotalStatContainer>
-
+                                
+                                    {
+                                        stats.map((item, index) => {
+                                            return (
+                                                <s.Stat key={index}>
+                                                    <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
+                                                    <s.ValueStat>{item.base_stat}</s.ValueStat>
+                                                    <s.Table></s.Table>
+                                                </s.Stat>
+                                            )
+                                        })
+                                    }
+                                    <s.Stat>
+                                        <s.TitleStat>Total</s.TitleStat>
+                                        <s.ValueStat>{TotalBaseStat}</s.ValueStat>
+                                    </s.Stat>
                             </s.BoxStats>
                         </s.ContainerBaseStats>
 

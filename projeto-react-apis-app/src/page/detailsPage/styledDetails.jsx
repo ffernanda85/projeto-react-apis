@@ -19,6 +19,10 @@ export const Title = styled.h1`
 `
 export const ContainerCardDetail = styled.div`
     background-color: #729F92;
+    background-image: url(${({ BG }) => BG});
+    background-repeat: no-repeat;
+    background-position: top -370px left 660px;
+    background-size: 730px 1500px;
     border-radius: 37.8857px;
     width: 1389px;
     height: 663px;
@@ -58,7 +62,7 @@ export const ImgBack = styled.img`
     width: 250px;
 `
 export const ContainerBaseStats = styled.div`
-    width: 350px;
+    width: 400px;
     height: 613px;
     background: rgb(255, 255, 255);
     border-radius: 12px;
@@ -76,6 +80,7 @@ export const TitleBaseStats = styled.h3`
 `
 export const BoxStats = styled.div`
     font-family: 'Inter';
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -84,15 +89,11 @@ export const BoxStats = styled.div`
     padding: 1rem;
 `
 export const Stat = styled.div`
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: auto;
-`
-export const TotalStatContainer = styled.div`
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
+    gap: .5rem;
 `
 export const TitleStat = styled.div`
     text-align: right;
@@ -106,7 +107,7 @@ export const ValueStat = styled.div`
 `
 export const Table = styled.div`
     width: 150px;
-    height: 15px;
+    height: 12px;
     border-radius: 12px;
     background-color: orange;
 `
