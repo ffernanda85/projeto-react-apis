@@ -18,7 +18,7 @@ export const Title = styled.h1`
     padding-bottom: 3.5rem;
 `
 export const ContainerCardDetail = styled.div`
-    background-color: #729F92;
+    background-color: ${({color})=> color};
     background-image: url(${({ BG }) => BG});
     background-repeat: no-repeat;
     background-position: top -370px left 660px;

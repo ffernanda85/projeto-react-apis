@@ -31,10 +31,7 @@ export function Header() {
                         <s.HeaderContainer>
                             <s.TitlePokedexPage onClick={() => goToPage(navigate, '/')} >Todos Pokémons</s.TitlePokedexPage>
                             <s.LogoPokedex onClick={() => goToPage(navigate, '/')} src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="pokelogo" />
-                            <s.BtnDeletePokemon onClick={() => {
-                                context.setModal(true),
-                                    context.setAction("delete")
-                            }}>Excluir da Pokédex</s.BtnDeletePokemon>
+                            <s.BtnDeletePokemon onClick={() => {context.setModal(true),context.setAction("delete")}}>Excluir da Pokédex</s.BtnDeletePokemon>
                         </s.HeaderContainer>
             }
 

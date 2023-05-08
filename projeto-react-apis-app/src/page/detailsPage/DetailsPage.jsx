@@ -2,12 +2,12 @@ import { Header } from "../../components/header/Header";
 import { Modal } from "../../components/modal/Modal";
 import * as s from "./styledDetails"
 import BG from "../../assets/img/cards/pngwing2.svg"
-import Poke from "../../assets/img/cards/pokemon/poke1.svg"
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import axios from "axios";
 import { BASE_URL } from "../../constant/constant";
+import { abilities } from "../../types/abilities"
 
 export function DetailsPage() {
     const params = useParams()
@@ -18,8 +18,12 @@ export function DetailsPage() {
     const [id, setId] = useState("")
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
+    const [colorCardDetail, setColorCardDetail] = useState("")
 
-    //console.log(params.namePokemon)
+
+    useEffect(() => {
+        details(params.namePokemon)
+    }, [])
 
     const details = async (namePokemon) => {
         const URL = BASE_URL + namePokemon
@@ -28,10 +32,12 @@ export function DetailsPage() {
             const res = await axios.get(URL)
 
             console.log(res.data)
-            //console.log("stats:", res.data.stats)
 
             const dataMove = res.data.moves.slice(0, 4)
 
+            const selectedColorCard = abilities.find(e => e.type === res.data.types[0].type.name)
+
+            setColorCardDetail(selectedColorCard.colorCard)
             setImgFront(res.data.sprites.front_default)
             setImgBack(res.data.sprites.back_default)
             setImgPoke(res.data.sprites.other["official-artwork"].front_default)
@@ -44,12 +50,10 @@ export function DetailsPage() {
         }
     }
 
-    useEffect(() => {
-        details(params.namePokemon)
-    }, [])
+    
 
-    console.log(stats)
-    //const initialValue = 
+    console.log(colorCardDetail)
+    
     const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
    
     return (
@@ -59,7 +63,7 @@ export function DetailsPage() {
                 <Modal />
                 <s.Title>Detalhes</s.Title>
 
-                <s.ContainerCardDetail BG={BG}>
+                <s.ContainerCardDetail BG={BG} color={colorCardDetail}>
 
                     <s.ContainerBoxOne>
                         <s.ContainerImgPokemon>
