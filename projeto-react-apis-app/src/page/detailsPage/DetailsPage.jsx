@@ -19,6 +19,7 @@ export function DetailsPage() {
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
     const [colorCardDetail, setColorCardDetail] = useState("")
+    const [pokemon, setPokemon] = useState()
 
 
     useEffect(() => {
@@ -31,12 +32,13 @@ export function DetailsPage() {
         try {
             const res = await axios.get(URL)
 
-            console.log(res.data)
+            //console.log(res.data)
 
             const dataMove = res.data.moves.slice(0, 4)
 
             const selectedColorCard = abilities.find(e => e.type === res.data.types[0].type.name)
 
+            setPokemon(res.data)
             setColorCardDetail(selectedColorCard.colorCard)
             setImgFront(res.data.sprites.front_default)
             setImgBack(res.data.sprites.back_default)
@@ -49,16 +51,15 @@ export function DetailsPage() {
             console.log(error.response)
         }
     }
-
     
-
-    console.log(colorCardDetail)
+    //console.log(colorCardDetail)
+    //console.log(pokemon)
     
     const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
    
     return (
         <>
-            <Header />
+            <Header pokemon={pokemon}/>
             <s.Container BG={BG}>
                 <Modal />
                 <s.Title>Detalhes</s.Title>

@@ -23,6 +23,7 @@ export const Modal = () => {
                 <s.ModalContainer onClick={() => context.setModal(false)} >
                     <div>
                         {context.modal && context.action === 'delete' && <s.ImgModal src={Oh_No} alt="delete" />}
+                        {context.modal && context.action === 'capture' && <s.ImgModal src={Gotcha} alt="capture" />}
                     </div>
                 </s.ModalContainer>
             }

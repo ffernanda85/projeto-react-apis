@@ -23,22 +23,16 @@ export function GlobalState() {
     }, [])
 
     const capture = (pokemon) => {
-        /* const newPokemon = pokemons.filter(e => e.name !== pokemon.name) */
         pokemon.isPokedex = true
-        /* setPokemons(newPokemon) */
         setPokedex([...pokedex, pokemon])
         setModal(true)
         setAction("capture")
     }
 
     const del = (pokemon) => {
-        /* const copyPokedex = pokedex.filter(pokedex => pokedex.name !== pokemon.name) */
         pokemon.isPokedex = false
-
-        /* setPokemons([...pokemons, pokemon]) */
         setModal(true)
         setAction("delete")
-        /* setPokedex(copyPokedex) */
     }
 
     

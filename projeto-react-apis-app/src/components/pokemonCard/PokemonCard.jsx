@@ -20,6 +20,10 @@ export function PokemonCard(props) {
     const navigate = useNavigate()
     const location = useLocation()
 
+    useEffect(() => {
+        getDataPokemon()
+    }, [context.pokedex, props])
+
     const getDataPokemon = async () => {
         try {
             const res = await axios.get(pokemon.url)
@@ -35,10 +39,6 @@ export function PokemonCard(props) {
         }
     }
 
-    useEffect(() => {
-        getDataPokemon()
-    }, [context.pokedex, props])
-
     return (
         <>
             <s.ContainerCard color={color} >
@@ -53,11 +53,12 @@ export function PokemonCard(props) {
                                 const ability = abilities.find(
                                     (ability) => ability.type === e.type.name
                                 );
-                            return (
-                                <s.AbilityOne key={e.type.name} {...ability} >
-                                    <s.NameAbility>{ e.type.name }</s.NameAbility>
-                                </s.AbilityOne>
-                            )})
+                                return (
+                                    <s.AbilityOne key={e.type.name} {...ability} >
+                                        <s.NameAbility>{e.type.name}</s.NameAbility>
+                                    </s.AbilityOne>
+                                )
+                            })
                         }
                     </s.ContainerAbility>
                 </s.ContainerInformation>
