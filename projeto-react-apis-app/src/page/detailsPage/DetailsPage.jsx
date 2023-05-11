@@ -19,8 +19,7 @@ export function DetailsPage() {
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
     const [colorCardDetail, setColorCardDetail] = useState("")
-    const [pokemon, setPokemon] = useState()
-
+    const [pokemon, setPokemon] = useState({})
 
     useEffect(() => {
         details(params.namePokemon)
@@ -28,14 +27,9 @@ export function DetailsPage() {
 
     const details = async (namePokemon) => {
         const URL = BASE_URL + namePokemon
-
         try {
             const res = await axios.get(URL)
-
-            //console.log(res.data)
-
             const dataMove = res.data.moves.slice(0, 4)
-
             const selectedColorCard = abilities.find(e => e.type === res.data.types[0].type.name)
 
             setPokemon(res.data)
@@ -59,7 +53,7 @@ export function DetailsPage() {
    
     return (
         <>
-            <Header pokemon={pokemon}/>
+            <Header pokemon={pokemon} />
             <s.Container BG={BG}>
                 <Modal />
                 <s.Title>Detalhes</s.Title>

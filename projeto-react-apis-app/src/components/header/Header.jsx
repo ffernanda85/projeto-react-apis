@@ -9,12 +9,8 @@ export function Header({pokemon}) {
     const location = useLocation()
     const context = useContext(GlobalContext)
 
-
-    const filterPokedexHeader = pokemon ? context.pokedex.filter((item) => item.name === pokemon.name) : []
+    const filterPokedexHeader = pokemon? context.pokedex.find((item) => item.name === pokemon.name):{}
     
-//<s.BtnCatch isOn={false} onClick={() => { context.capture(pokemon) }} > Capturar!</s.BtnCatch>
-//<s.BtnCatch isOn={true} onClick={() => { context.del(pokemon) }} > Excluir</s.BtnCatch>
-
     console.log(pokemon)
     console.log(filterPokedexHeader)
     return (
@@ -41,9 +37,9 @@ export function Header({pokemon}) {
                             <s.LogoPokedex onClick={() => goToPage(navigate, '/')} src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="pokelogo" />
                             
 
-                            {pokemon && filterPokedexHeader.length > 0 && <s.BtnPokedex isOn={true} onClick={() => { context.del(pokemon) }}>Excluir da Pokédex</s.BtnPokedex>}
+                            {pokemon && filterPokedexHeader && <s.BtnPokedex isOn={true} onClick={() => { context.del(pokemon) }}>Excluir da Pokédex</s.BtnPokedex>}
 
-                            {pokemon && filterPokedexHeader.length === 0 && <s.BtnPokedex isOn={false} onClick={() => { context.capture(pokemon) }}>Adicionar Pokédex</s.BtnPokedex>}
+                            {pokemon && !filterPokedexHeader && <s.BtnPokedex isOn={false} onClick={() => { context.capture(pokemon) }}>Adicionar Pokédex</s.BtnPokedex>}
                             
                         </s.HeaderContainer>
             }
