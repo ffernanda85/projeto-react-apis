@@ -7,7 +7,12 @@ export function GlobalState() {
     const [action, setAction] = useState("")
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-
+    
+    useEffect(() => {
+    
+        getAllPokemons()
+    }, [])
+    
     const getAllPokemons = async () => {
         try {
             const res = await axios.get(BASE_URL)
@@ -17,10 +22,6 @@ export function GlobalState() {
             console.log(error.response)
         }
     }
-
-    useEffect(() => {
-        getAllPokemons()
-    }, [])
 
     const capture = (pokemon) => {
         pokemon.isPokedex = true
