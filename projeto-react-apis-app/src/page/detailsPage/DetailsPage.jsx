@@ -12,6 +12,7 @@ import { abilities } from "../../types/abilities"
 export function DetailsPage() {
     const params = useParams()
     const context = useContext(GlobalContext)
+
     const [imgFront, setImgFront] = useState("")
     const [imgBack, setImgBack] = useState("")
     const [imgPoke, setImgPoke] = useState("")
@@ -19,7 +20,7 @@ export function DetailsPage() {
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
     const [colorCardDetail, setColorCardDetail] = useState("")
-    const [pokemon, setPokemon] = useState({})
+    const [pokemonDetails, setPokemonDetails] = useState({})
 
     useEffect(() => {
         details(params.namePokemon)
@@ -32,7 +33,13 @@ export function DetailsPage() {
             const dataMove = res.data.moves.slice(0, 4)
             const selectedColorCard = abilities.find(e => e.type === res.data.types[0].type.name)
 
-            setPokemon(res.data)
+            setPokemonDetails(
+                {
+                    //id: res.data.id,
+                    name: res.data.name,
+                    url: `${BASE_URL}${res.data.id}`
+                }
+            )
             setColorCardDetail(selectedColorCard.colorCard)
             setImgFront(res.data.sprites.front_default)
             setImgBack(res.data.sprites.back_default)
@@ -45,15 +52,14 @@ export function DetailsPage() {
             console.log(error.response)
         }
     }
-    
-    //console.log(colorCardDetail)
-    //console.log(pokemon)
-    
+
+    //console.log(pokemonDetails)
+
     const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
-   
+
     return (
         <>
-            <Header pokemon={pokemon} />
+            <Header pokemonDetails={pokemonDetails} />
             <s.Container BG={BG}>
                 <Modal />
                 <s.Title>Detalhes</s.Title>
@@ -69,22 +75,22 @@ export function DetailsPage() {
                         <s.ContainerBaseStats>
                             <s.TitleBaseStats>Base stats</s.TitleBaseStats>
                             <s.BoxStats>
-                                
-                                    {
-                                        stats.map((item, index) => {
-                                            return (
-                                                <s.Stat key={index}>
-                                                    <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
-                                                    <s.ValueStat>{item.base_stat}</s.ValueStat>
-                                                    <s.Table base={item.base_stat} ></s.Table>
-                                                </s.Stat>
-                                            )
-                                        })
-                                    }
-                                    <s.Stat>
-                                        <s.TitleStat>Total</s.TitleStat>
-                                        <s.ValueStat>{TotalBaseStat}</s.ValueStat>
-                                    </s.Stat>
+
+                                {
+                                    stats.map((item, index) => {
+                                        return (
+                                            <s.Stat key={index}>
+                                                <s.TitleStat>{item.stat.name === 'special-attack' ? 'Sp.Atk' : item.stat.name === 'special-defense' ? 'Sp.Def' : item.stat.name}</s.TitleStat>
+                                                <s.ValueStat>{item.base_stat}</s.ValueStat>
+                                                <s.Table base={item.base_stat} ></s.Table>
+                                            </s.Stat>
+                                        )
+                                    })
+                                }
+                                <s.Stat>
+                                    <s.TitleStat>Total</s.TitleStat>
+                                    <s.ValueStat>{TotalBaseStat}</s.ValueStat>
+                                </s.Stat>
                             </s.BoxStats>
                         </s.ContainerBaseStats>
 
