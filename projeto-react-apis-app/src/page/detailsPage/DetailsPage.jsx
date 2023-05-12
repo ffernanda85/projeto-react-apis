@@ -1,18 +1,15 @@
 import { Header } from "../../components/header/Header";
-import { Modal } from "../../components/modal/Modal";
 import * as s from "./styledDetails"
 import BG from "../../assets/img/cards/pngwing2.svg"
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constant/constant";
 import { abilities } from "../../types/abilities"
 
 export function DetailsPage() {
     const params = useParams()
-    const context = useContext(GlobalContext)
-
+    
     const [imgFront, setImgFront] = useState("")
     const [imgBack, setImgBack] = useState("")
     const [imgPoke, setImgPoke] = useState("")
@@ -20,7 +17,6 @@ export function DetailsPage() {
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
     const [colorCardDetail, setColorCardDetail] = useState("")
-    const [pokemonDetails, setPokemonDetails] = useState({})
 
     useEffect(() => {
         details(params.namePokemon)
@@ -33,13 +29,6 @@ export function DetailsPage() {
             const dataMove = res.data.moves.slice(0, 4)
             const selectedColorCard = abilities.find(e => e.type === res.data.types[0].type.name)
 
-            setPokemonDetails(
-                {
-                    //id: res.data.id,
-                    name: res.data.name,
-                    url: `${BASE_URL}${res.data.id}`
-                }
-            )
             setColorCardDetail(selectedColorCard.colorCard)
             setImgFront(res.data.sprites.front_default)
             setImgBack(res.data.sprites.back_default)
@@ -52,30 +41,22 @@ export function DetailsPage() {
             console.log(error.response)
         }
     }
-
-    //console.log(pokemonDetails)
-
     const TotalBaseStat = stats.reduce((acc, curr) => acc + curr.base_stat, 0)
 
     return (
         <>
-            <Header pokemonDetails={pokemonDetails} />
+            <Header pokemonName={params?.namePokemon} />
             <s.Container BG={BG}>
-                <Modal />
                 <s.Title>Detalhes</s.Title>
-
                 <s.ContainerCardDetail BG={BG} color={colorCardDetail}>
-
                     <s.ContainerBoxOne>
                         <s.ContainerImgPokemon>
                             <s.BoxImgFront> <s.ImgFront src={imgFront} alt="imgFront" /> </s.BoxImgFront>
                             <s.BoxImgBack> <s.ImgBack src={imgBack} alt="imgBack" /> </s.BoxImgBack>
                         </s.ContainerImgPokemon>
-
                         <s.ContainerBaseStats>
                             <s.TitleBaseStats>Base stats</s.TitleBaseStats>
                             <s.BoxStats>
-
                                 {
                                     stats.map((item, index) => {
                                         return (
@@ -93,7 +74,6 @@ export function DetailsPage() {
                                 </s.Stat>
                             </s.BoxStats>
                         </s.ContainerBaseStats>
-
                         <s.ContainerBox>
                             <s.BoxAbilites>
                                 <s.Id>#{id < 10 ? "0" + id : id}</s.Id>
@@ -113,18 +93,12 @@ export function DetailsPage() {
                                 </s.ContainerBoxMove>
                             </s.BoxMoves>
                         </s.ContainerBox>
-
                     </s.ContainerBoxOne>
-
-
                     <s.ContainerPokemon>
                         <s.ImgPokemon src={imgPoke} alt="" />
                     </s.ContainerPokemon>
-
                 </s.ContainerCardDetail>
-
             </s.Container>
-
         </>
     )
 }

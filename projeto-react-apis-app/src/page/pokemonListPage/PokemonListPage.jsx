@@ -3,7 +3,6 @@ import { PokemonCard } from '../../components/pokemonCard/PokemonCard'
 import { Header } from '../../components/header/Header'
 import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
-import { Modal } from '../../components/modal/Modal'
 
 export function PokemonListPage() {
     const context = useContext(GlobalContext)
@@ -11,7 +10,6 @@ export function PokemonListPage() {
     return (
         <>
             <Header />
-            <Modal />
             <s.Container>
                 <s.Title>Todos Pokémons</s.Title>
                 <s.ContainerCard>
