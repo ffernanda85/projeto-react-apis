@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constant/constant";
 import { abilities } from "../../types/abilities"
+import { AbilityOne, ContainerAbility, NameAbility } from "../../components/pokemonCard/styledPokemonCard";
 
 export function DetailsPage() {
     const params = useParams()
-    
+
     const [imgFront, setImgFront] = useState("")
     const [imgBack, setImgBack] = useState("")
     const [imgPoke, setImgPoke] = useState("")
@@ -17,6 +18,7 @@ export function DetailsPage() {
     const [move, setMove] = useState([])
     const [stats, setStats] = useState([])
     const [colorCardDetail, setColorCardDetail] = useState("")
+    const [types, setTypes] = useState([])
 
     useEffect(() => {
         details(params.namePokemon)
@@ -36,6 +38,7 @@ export function DetailsPage() {
             setId(res.data.id)
             setMove(dataMove)
             setStats(res.data.stats)
+            setTypes(res.data.types)
 
         } catch (error) {
             console.log(error.response)
@@ -78,7 +81,18 @@ export function DetailsPage() {
                             <s.BoxAbilites>
                                 <s.Id>#{id < 10 ? "0" + id : id}</s.Id>
                                 <s.NamePokemon>{params.namePokemon}</s.NamePokemon>
-                                <div></div>
+                                <s.ContainerAbility>
+                                    {!!types.length &&
+                                        types.map((e) => {
+                                            const ability = abilities.find(ability => ability.type === e?.type.name);
+                                            return (
+                                                <AbilityOne key={e.type.name} {...ability} >
+                                                    <NameAbility>{e.type.name}</NameAbility>
+                                                </AbilityOne>
+                                            )
+                                        })
+                                    }
+                                </s.ContainerAbility>
                             </s.BoxAbilites>
                             <s.BoxMoves>
                                 <s.TitleMoves>Moves:</s.TitleMoves>

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    //max-width:100vw;
-    //width: 1440px;
     min-height: 100vh;
     padding: 3.75rem 2.5rem;
     display: flex;

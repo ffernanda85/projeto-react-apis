@@ -47,6 +47,12 @@ export const BoxImgFront = styled.div`
     display: flex;
     justify-content: center;
 `
+export const ImgFront = styled.img`
+    width: 250px;
+    &:hover{
+        transform: scale(1.1);
+    }
+`
 export const BoxImgBack = styled.div`
     width: 282px;
     height: 282px;
@@ -55,11 +61,11 @@ export const BoxImgBack = styled.div`
     display: flex;
     justify-content: center;
 `
-export const ImgFront = styled.img`
-    width: 250px;
-`
 export const ImgBack = styled.img`
     width: 250px;
+    &:hover{
+        transform: scale(1.1);
+    }
 `
 export const ContainerBaseStats = styled.div`
     width: 400px;
@@ -139,6 +145,11 @@ export const NamePokemon = styled.h2`
             text-transform: uppercase;
         }
 `
+export const ContainerAbility = styled.div`
+    display: flex;
+    gap: 18px;
+    margin-top: 9px;
+`
 export const BoxMoves = styled.div`
     width: 292px;
     height: 453px;
@@ -182,4 +193,7 @@ export const ImgPokemon = styled.img`
     right: 30px;
     bottom: 520px;
     width: 270px;
+    &:hover{
+        transform: scale(1.1);
+    }
 `

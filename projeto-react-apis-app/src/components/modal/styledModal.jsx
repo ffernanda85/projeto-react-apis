@@ -1,16 +1,5 @@
 import styled from 'styled-components'
 
-export const ModalContainer = styled.div`
-    min-height: 100%;
-    position: absolute;
-`
-export const ImgModal = styled.img`
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-`
 export const ContainerModal=styled.div`
     display: flex;
     justify-content: center;
@@ -31,5 +20,16 @@ export const ModalBox = styled.div`
     background-color: #f1f1f1;
     img{
         width: 40%;
-     } 
+    } 
 `;
+export const ImgModal = styled.img`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+`
+export const ModalContainer = styled.div`
+    min-height: 100%;
+    position: absolute;
+`
