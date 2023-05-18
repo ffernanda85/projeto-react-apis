@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     min-height: 100vh;
-    padding: 3.75rem 2.5rem;
+    padding: 3.75rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 3.45rem;
@@ -19,7 +19,36 @@ export const Title = styled.h1`
 export const ContainerCard = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    row-gap: 3.31rem;
+    column-gap: 1.5rem;
+    row-gap: 3rem;
+`
+export const ImgArrowBack = styled.img`
+    position: fixed;
+    bottom: 6rem;
+    left: 10px;
+    width: 45px;
+    Mix-blend-mode: multiply;
+    cursor: pointer;
+    transition: all .5s;
+
+    :hover{
+        border: 3px solid black;
+        border-radius: 30%;
+    }
+`
+export const ImgArrowNext = styled.img`
+    position: fixed;
+    bottom: 6rem;
+    right: 10px;
+    width: 45px;
+    Mix-blend-mode: multiply;
+    cursor: pointer;
+    transition: all .5s;
+
+    :hover{
+        border: 3px solid black;
+        border-radius: 30%;
+    }
 `

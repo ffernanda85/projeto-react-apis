@@ -7,15 +7,15 @@ export function GlobalState() {
     const [action, setAction] = useState("")
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
+    const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
-
         getAllPokemons()
     }, [])
 
     const getAllPokemons = async () => {
         try {
-            const res = await axios.get(BASE_URL)
+            const res = await axios.get(`${BASE_URL}?offset=${currentPage}`)
             setPokemons(res.data.results)
 
         } catch (error) {
@@ -47,6 +47,16 @@ export function GlobalState() {
         setAction("delete")
     }
 
+    const nextPage = () => {
+        setCurrentPage(currentPage+20)
+    }
+
+    const previousPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage-20)    
+        }
+    }
+
     return {
         modal,
         setModal,
@@ -57,6 +67,8 @@ export function GlobalState() {
         pokedex,
         setPokedex,
         capture,
-        del
+        del,
+        nextPage,
+        previousPage
     }
 }
