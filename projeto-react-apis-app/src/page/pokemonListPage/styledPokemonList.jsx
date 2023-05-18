@@ -36,6 +36,7 @@ export const ImgArrowBack = styled.img`
     :hover{
         border: 3px solid black;
         border-radius: 30%;
+        padding: 5px;
     }
 `
 export const ImgArrowNext = styled.img`
@@ -50,5 +51,6 @@ export const ImgArrowNext = styled.img`
     :hover{
         border: 3px solid black;
         border-radius: 30%;
+        padding: 5px;
     }
 `
