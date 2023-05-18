@@ -23,8 +23,8 @@ export function PokemonListPage() {
                             })
                     }
                 </s.ContainerCard>
-                <s.ImgArrowNext src={Next} alt="seta-next" onClick={context.nextPage()} />
-                <s.ImgArrowBack src={Back} alt="seta-back" onClick={context.backPage()}/>
+                <s.ImgArrowBack src={Back} alt="seta-back" onClick={context.backPage}/>
+                <s.ImgArrowNext src={Next} alt="seta-next" onClick={context.nextPage} />
             </s.Container>
         </>
     )

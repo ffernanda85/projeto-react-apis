@@ -11,7 +11,7 @@ export function GlobalState() {
 
     useEffect(() => {
         getAllPokemons()
-    }, [])
+    }, [currentPage])
 
     const getAllPokemons = async () => {
         try {
@@ -48,12 +48,12 @@ export function GlobalState() {
     }
 
     const nextPage = () => {
-        setCurrentPage(currentPage+20)
+        setCurrentPage(currentPage + 20)
     }
 
-    const previousPage = () => {
+    const backPage = () => {
         if (currentPage > 0) {
-            setCurrentPage(currentPage-20)    
+            setCurrentPage(currentPage - 20)    
         }
     }
 
@@ -69,6 +69,6 @@ export function GlobalState() {
         capture,
         del,
         nextPage,
-        previousPage
+        backPage
     }
 }
