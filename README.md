@@ -2,26 +2,23 @@
 ![pokedex](./projeto-react-apis-app/src/assets/img/readme/capa.jpg)
 
 ## Índice
-
-- [Descrição do Projeto]("#descrição-do-projeto")
-- [Enunciado]("#enunciado")
-- [Requisitos e Funcionalidades do Projeto]("#requisitos-e-funcionalidades-do-projeto")
-- [Funcionalidades Adicionais]("#funcionalidades-adicionais")
-- [Layout]("#layout")
-- [Demonstração]("#demonstração")
-- [Concepção do Projeto]("#concepção-do-projeto")
-- [Como Rodar Este Projeto]("#como-rodar-este-projeto")
-- [Tecnologias Utilizadas]("#tecnologias-utilizadas")
-- [Pessoas Autoras]("#pessoas-autoras")
-- [Próximos Passos]("#próximos-passos")
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Enunciado](#enunciado)
+- [Requisitos e Funcionalidades do Projeto](#requisitos-e-funcionalidades-do-projeto)
+- [Funcionalidades Adicionais](#funcionalidades-adicionais)
+- [Layout](#layout)
+- [Demonstração](#demonstração)
+- [Concepção do Projeto](#concepção-do-projeto)
+- [Como Rodar Este Projeto](#como-rodar-este-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pessoas Autoras](#pessoas-autoras)
+- [Próximos Passos](#próximos-passos)
 
 ## Descrição do Projeto
-
 O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Pokédex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos estudados durante o Módulo 2 de Frontend.
 Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma API pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
 
-## Enunciado
-
+## 🗣Enunciado
 É objetivo deste projeto criar um site com três páginas usando a Poke API com as seguintes ferramentas e focos de estudo:
 
 - React
@@ -33,8 +30,7 @@ Este projeto terá como fonte de dados para a sua criação a [Poke Api](https:/
 - Design Systems
 - Estado Global
 
-## Requisitos e Funcionalidades do Projeto
-
+## 📝Requisitos e Funcionalidades do Projeto
 - **Requisitos Gerais:**
 	- [x] O site deve ter 3 páginas: Home, Pokédex e Detalhes;
 	- [x] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
@@ -54,13 +50,11 @@ Este projeto terá como fonte de dados para a sua criação a [Poke Api](https:/
 	- [x] Header deve ter um botão para adicionar ou remover da Pokédex e outro para voltar a página home.
 - [x] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
 
-## Funcionalidades Adicionais
-
+## 📱Funcionalidades Adicionais
 - [x] Renderização de mais pokémons, fora os 20 dos requisitos
 - [x] Manipulação dos pokémons a serem mostrados na página home com botões laterais
 
-## Layout
-
+## 📐Layout
 ![home](./projeto-react-apis-app/src/assets/img/readme/layout/home.png)
 ![pokedex](./projeto-react-apis-app/src/assets/img/readme/layout/pokedex.png)
 ![detalhes](./projeto-react-apis-app/src/assets/img/readme/layout/detalhes.png)
@@ -68,17 +62,14 @@ Este projeto terá como fonte de dados para a sua criação a [Poke Api](https:/
 ![excluir](./projeto-react-apis-app/src/assets/img/readme/layout/delete-detalhes.png)
 ![card](./projeto-react-apis-app/src/assets/img/readme/layout/card.png)
 
-## Demonstração
-
+## 🎥Demonstração
 [Link Demonstração](https://flavia-santos-pokedex.surge.sh/)
 
-## Concepção do Projeto
-
+## 🪛Concepção do Projeto
 ### Criação
 - Foi utilizado o VITE
 
-## Como Rodar Este Projeto
-
+## 🔧Como Rodar Este Projeto
 ```bash
 # Clone este repositório
 $ git clone linkrepositório
@@ -94,16 +85,14 @@ $ npm run start
 
 ```
 
-## Tecnologias Utilizadas
-
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:70px' src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'></a>
+## 🛠Tecnologias Utilizadas
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element'> <img style='width:70px' src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'></a>
 <a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:100px' src='https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'></a>
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:70px' src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'></a>
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:115px' src='https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white'></a>
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:150px' src='https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white'></a>
+<a href='https://pt-br.legacy.reactjs.org/'> <img style='width:70px' src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'></a>
+<a href='https://www.freecodecamp.org/portuguese/news/um-guia-completo-de-react-router-para-iniciantes-incluindo-router-hooks/'> <img style='width:115px' src='https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white'></a>
+<a href='https://styled-components.com/docs'> <img style='width:150px' src='https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white'></a>
 
-## Pessoas Autoras
-
+## 👩🏽‍💻Pessoas Autoras
 <img style='width:150px' src='https://avatars.githubusercontent.com/u/114631584?v=4' alt='pessoa desenvolvedora'>
 
 [Linkedin Flávia Santos](https://www.linkedin.com/in/flavia-santos-dev/)
