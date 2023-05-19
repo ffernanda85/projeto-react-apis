@@ -47,6 +47,12 @@ export const BoxImgFront = styled.div`
     display: flex;
     justify-content: center;
 `
+export const ImgFront = styled.img`
+    width: 250px;
+    &:hover{
+        transform: scale(1.1);
+    }
+`
 export const BoxImgBack = styled.div`
     width: 282px;
     height: 282px;
@@ -55,11 +61,11 @@ export const BoxImgBack = styled.div`
     display: flex;
     justify-content: center;
 `
-export const ImgFront = styled.img`
-    width: 250px;
-`
 export const ImgBack = styled.img`
     width: 250px;
+    &:hover{
+        transform: scale(1.1);
+    }
 `
 export const ContainerBaseStats = styled.div`
     width: 400px;
@@ -69,7 +75,7 @@ export const ContainerBaseStats = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1.1875rem;
+    padding: 1.18rem;
 `
 export const TitleBaseStats = styled.h3`
     font-family: 'Inter';
@@ -106,7 +112,8 @@ export const ValueStat = styled.div`
     margin-right: 1rem;
 `
 export const Table = styled.div`
-    width: ${({base})=> base}%;
+    text-align: left;
+    width: ${({ base }) => base}px;
     height: 12px;
     border-radius: 12px;
     background-color: ${({base})=> base <= 50 ? '#ff7c2e' : '#ffdd69' } ;
@@ -138,6 +145,11 @@ export const NamePokemon = styled.h2`
         ::first-letter {
             text-transform: uppercase;
         }
+`
+export const ContainerAbility = styled.div`
+    display: flex;
+    gap: 18px;
+    margin-top: 9px;
 `
 export const BoxMoves = styled.div`
     width: 292px;
@@ -182,4 +194,7 @@ export const ImgPokemon = styled.img`
     right: 30px;
     bottom: 520px;
     width: 270px;
+    &:hover{
+        transform: scale(1.1);
+    }
 `

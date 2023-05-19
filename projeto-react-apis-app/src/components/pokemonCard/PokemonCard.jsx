@@ -67,9 +67,9 @@ export function PokemonCard(props) {
                 <s.Details onClick={() => goToPage(navigate, `/details/${pokemon.name}`)}>Detalhes</s.Details>
                 {
                     location.pathname === '/' ?
-                        <s.BtnCatch isOn={false} onClick={() => { context.capture(pokemon) }} > Capturar!</s.BtnCatch>
+                        <s.BtnCatch isOn={false} onClick={() => { context.capture(pokemon.name) }} > Capturar!</s.BtnCatch>
                         :
-                        <s.BtnCatch isOn={true} onClick={() => { context.del(pokemon) }} > Excluir</s.BtnCatch>
+                        <s.BtnCatch isOn={true} onClick={() => { context.del(pokemon.name) }} > Excluir</s.BtnCatch>
                 }
             </s.ContainerCard>
         </>

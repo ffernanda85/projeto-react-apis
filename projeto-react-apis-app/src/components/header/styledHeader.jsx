@@ -13,6 +13,7 @@ export const LogoPokedex = styled.img`
     transform: translate(-50%, -50%);
     position: absolute;
     cursor: pointer;
+
 `
 export const BtnPokedex = styled.button`
     position: absolute;
@@ -21,7 +22,7 @@ export const BtnPokedex = styled.button`
     width: 270px;
     height: 70px;
     transform: translatey(25%);
-    background: ${({isOn})=> isOn ? '#FF6262' : '#33A4F5'};
+    background: ${({ isOn }) => isOn ? '#FF6262' : '#33A4F5'};
     border-radius: 8px;
     border: none;
     font-family: 'Poppins';
@@ -30,6 +31,12 @@ export const BtnPokedex = styled.button`
     line-height: 2.25rem;
     color: #FFFFFF;
     cursor: pointer;
+    
+    &:hover {
+        background: #FFFFFF;
+        border: 3px solid ${({ isOn }) => isOn ? '#FF6262' : '#33A4F5'};
+        color: ${({ isOn }) => isOn ? '#FF6262' : '#33A4F5'};
+}
 `
 export const TitlePokedexPage = styled.h2`
     position: absolute;
@@ -50,19 +57,3 @@ export const TitlePokedexPage = styled.h2`
         color: #1A1A1A;
     }
 `
-/* export const BtnDeletePokemon = styled.button`
-    position: absolute;
-    top: 51px;
-    right: 40px;
-    transform: translatey(35%);
-    width: 226px;
-    height: 57px;
-    background: #FF6262;
-    border-radius: 8px;
-    border: none;
-    font-family: 'Poppins';
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #FFFFFF;
-    cursor: pointer;
-` */

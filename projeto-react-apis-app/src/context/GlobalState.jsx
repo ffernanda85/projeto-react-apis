@@ -7,15 +7,15 @@ export function GlobalState() {
     const [action, setAction] = useState("")
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-    
+    const [currentPage, setCurrentPage] = useState(0)
+
     useEffect(() => {
-    
         getAllPokemons()
-    }, [])
-    
+    }, [currentPage])
+
     const getAllPokemons = async () => {
         try {
-            const res = await axios.get(BASE_URL)
+            const res = await axios.get(`${BASE_URL}?offset=${currentPage}`)
             setPokemons(res.data.results)
 
         } catch (error) {
@@ -23,20 +23,40 @@ export function GlobalState() {
         }
     }
 
-    const capture = (pokemon) => {
-        pokemon.isPokedex = true
-        setPokedex([...pokedex, pokemon])
+    const capture = (pokemonName) => {
+        const newPokemons = pokemons.map(pokemon => {
+            if (pokemon.name === pokemonName) {
+                pokemon.isPokedex = true
+            }
+            return pokemon
+        })
+        setPokemons(newPokemons)
         setModal(true)
         setAction("capture")
     }
 
-    const del = (pokemon) => {
-        pokemon.isPokedex = false
+    const del = (pokemonName) => {
+        const newPokemons = pokemons.map(pokemon => {
+            if (pokemon.name === pokemonName) {
+                pokemon.isPokedex = false
+            }
+            return pokemon
+        })
+        setPokemons(newPokemons)
         setModal(true)
         setAction("delete")
     }
 
-    
+    const nextPage = () => {
+        setCurrentPage(currentPage + 20)
+    }
+
+    const backPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 20)    
+        }
+    }
+
     return {
         modal,
         setModal,
@@ -47,6 +67,8 @@ export function GlobalState() {
         pokedex,
         setPokedex,
         capture,
-        del
+        del,
+        nextPage,
+        backPage
     }
 }

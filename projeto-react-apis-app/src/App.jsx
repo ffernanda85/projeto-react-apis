@@ -1,6 +1,7 @@
 import { Router } from './routes/Router'
 import { GlobalContext } from './context/GlobalContext'
 import { GlobalState } from './context/GlobalState'
+import { Modal } from './components/modal/Modal'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <GlobalContext.Provider value={context}>
+        {context.modal && <Modal/> }
         <Router />
       </GlobalContext.Provider>
     </>

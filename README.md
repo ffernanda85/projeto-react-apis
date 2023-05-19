@@ -1,61 +1,109 @@
-# **Projeto React e API's**
-O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend.
+# **Projeto Pokédex**
+![pokedex](./projeto-react-apis-app/src/assets/img/readme/capa.jpg)
 
-Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
+## Índice
 
-Os conteúdos principais  a serem estudados são:
+- [Descrição do Projeto]("#descrição-do-projeto")
+- [Enunciado]("#enunciado")
+- [Requisitos e Funcionalidades do Projeto]("#requisitos-e-funcionalidades-do-projeto")
+- [Funcionalidades Adicionais]("#funcionalidades-adicionais")
+- [Layout]("#layout")
+- [Demonstração]("#demonstração")
+- [Concepção do Projeto]("#concepção-do-projeto")
+- [Como Rodar Este Projeto]("#como-rodar-este-projeto")
+- [Tecnologias Utilizadas]("#tecnologias-utilizadas")
+- [Pessoas Autoras]("#pessoas-autoras")
+- [Próximos Passos]("#próximos-passos")
 
-- Integração de APIs
-- React Router
-- Design Systems
-- Estado Global
+## Descrição do Projeto
 
-## **Enunciado**
-É objetivo deste projeto criar um site com três páginas usando a Poke Api com as seguintes ferramentas:
+O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Pokédex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos estudados durante o Módulo 2 de Frontend.
+Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma API pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
+
+## Enunciado
+
+É objetivo deste projeto criar um site com três páginas usando a Poke API com as seguintes ferramentas e focos de estudo:
 
 - React
 - React Router
 - Styled-components
 - React Context
 - Axios
+- Integração de APIs
+- Design Systems
+- Estado Global
 
-### **Requisitos**
-- **Gerais:**
-	- [ ] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
-	- [ ] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
-	- [ ] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
+## Requisitos e Funcionalidades do Projeto
+
+- **Requisitos Gerais:**
+	- [x] O site deve ter 3 páginas: Home, Pokédex e Detalhes;
+	- [x] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
+	- [x] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
 - **Página Home:**
-	- [ ]  Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
-	- [ ] Cada Pokemon será representado por um Card;
-	- [ ] Em cada card de Pokemon tem um botão para adicioná-lo à Pokedex e um outro botão para acessar os detalhes do Pokemon;
-	- [ ] Header dessa página terá um botão para acessar a página da Pokedex
+	- [x]  Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
+	- [x] Cada Pokemon será representado por um Card;
+	- [x] Em cada card de Pokemon tem um botão para adicioná-lo à Pokedex e um outro botão para acessar os detalhes do Pokemon;
+	- [x] Header dessa página terá um botão para acessar a página da Pokedex
 - **Página Pokédex**
-	- [ ] Renderizar a lista de pokémons adicionados na pokedex;
-	- [ ] Em cada card de Pokemon deve ter um botão para removê-lo da Pokedex e um outro botão para acessar os detalhes do Pokemon.
-	- [ ] Header deve ter um botão para voltar para a Home
-	- [ ] Não deve ser possível adicionar o mesmo Pokemon duas vezes na Pokedex
+	- [x] Renderizar a lista de pokémons adicionados na pokédex;
+	- [x] Em cada card de Pokémon deve ter um botão para removê-lo da Pokédex e um outro botão para acessar os detalhes do Pokémon.
+	- [x] Header deve ter um botão para voltar para a Home
+	- [x] Não deve ser possível adicionar o mesmo Pokémon duas vezes na Pokédex
 - **Página de Detalhes**
-	- [ ] Mostrar os detalhes do Pokemon selecionado, com informações descritas
-	- [ ] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
-- [ ] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
+	- [x] Mostrar os detalhes do Pokémon selecionado, com informações descritas
+	- [x] Header deve ter um botão para adicionar ou remover da Pokédex e outro para voltar a página home.
+- [x] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
 
+## Funcionalidades Adicionais
 
-### Instruções para preparar o seu repositório
+- [x] Renderização de mais pokémons, fora os 20 dos requisitos
+- [x] Manipulação dos pokémons a serem mostrados na página home com botões laterais
 
-- Faça o fork desse repositório e realize o clone da sua cópia `seu-nome-de-usuario/projeto-lista-intro-javascript`.
-   <details>
-   <summary>Quer uma dica?</summary>
-   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório"/>
-   </details>
-- Crie os arquivos do projeto dentro deste repo;
-- **Lembre-se de abrir os PRs para seu próprio repositório.**
-- Para isso, você precisará fazer o projeto utilizando **branches**. Não faça as alterações direto na branch ```main```!
+## Layout
 
-### Instruções de entrega
+![home](./projeto-react-apis-app/src/assets/img/readme/layout/home.png)
+![pokedex](./projeto-react-apis-app/src/assets/img/readme/layout/pokedex.png)
+![detalhes](./projeto-react-apis-app/src/assets/img/readme/layout/detalhes.png)
+![captura](./projeto-react-apis-app/src/assets/img/readme/layout/capture.png)
+![excluir](./projeto-react-apis-app/src/assets/img/readme/layout/delete-detalhes.png)
+![card](./projeto-react-apis-app/src/assets/img/readme/layout/card.png)
 
-![image](https://user-images.githubusercontent.com/71137294/227538428-52271ed2-df78-4500-b286-25f03aa7bf2e.png)
-1.  [Crie o surge](https://labenu.notion.site/Deploy-de-front-React-com-Surge-f902a03ec1d247dc9af9aee5a1469d96) do seu projeto e pegue o link da publicação(deploy);
-2.  Adicione o link do surge no readme do seu projeto;
-3.  Tire print das páginas do seu projeto e cole no readme;
-4.  Abra um novo Pull Request (PR) com a frase **PR para correção**. Caso não saiba como fazê-lo, assista a esse [vídeo](https://www.canva.com/design/DAFY4nS5W2c/t92uFMR61YtmA7bCwj2S1Q/watch).
-5.  Envie o link do seu PR e do surge no [formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
+## Demonstração
+
+[Link Demonstração](https://flavia-santos-pokedex.surge.sh/)
+
+## Concepção do Projeto
+
+### Criação
+- Foi utilizado o VITE
+
+## Como Rodar Este Projeto
+
+```bash
+# Clone este repositório
+$ git clone linkrepositório
+
+# Acesse a pasta do projeto no seu terminal
+$ cd projeto-react-apis
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação
+$ npm run start
+
+```
+
+## Tecnologias Utilizadas
+
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:70px' src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'></a>
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:100px' src='https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'></a>
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:70px' src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'></a>
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:115px' src='https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white'></a>
+<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'> <img style='width:150px' src='https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white'></a>
+
+## Pessoas Autoras
+
+<img style='width:150px' src='https://avatars.githubusercontent.com/u/114631584?v=4' alt='pessoa desenvolvedora'>
+
+[Linkedin Flávia Santos](https://www.linkedin.com/in/flavia-santos-dev/)

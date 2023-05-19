@@ -3,7 +3,7 @@ export const abilities = [
         type: 'poison',
         img: 'https://uploaddeimagens.com.br/images/004/430/282/thumb/1.png?1681449749',
         color: '#AD61AE',
-        colorCard: '#729F92'
+        colorCard: '#C596BD'
     },
     {
         type: 'grass',
@@ -21,7 +21,7 @@ export const abilities = [
         type: 'flying',
         img: `https://uploaddeimagens.com.br/images/004/430/285/full/4.png?1681449986`,
         color: '#6892B0',
-        colorCard: '#EAAB7D'
+        colorCard: '#808080'
     },
     {
         type: 'water',
@@ -45,7 +45,7 @@ export const abilities = [
         type: 'dark',
         img: `https://uploaddeimagens.com.br/images/004/430/290/full/8.png?1681450071`,
         color: '#5C5365',
-        colorCard: '#729F92'
+        colorCard: '#323232'
     },
     {
         type: 'dragon',
@@ -56,55 +56,55 @@ export const abilities = [
     {
         type: 'electric',
         img: `https://uploaddeimagens.com.br/images/004/430/292/full/10.png?1681450112`,
-        color: '#F4D23B',
-        colorCard: '#729F92'
+        color: '#f6b928',
+        colorCard: '#FFFF00'
     },
     {
         type: 'fairy',
         img: `https://uploaddeimagens.com.br/images/004/430/293/full/11.png?1681450131`,
-        color: '#EC8FE6',
-        colorCard: '#729F92'
+        color: '#FF33CC',
+        colorCard: '#EC8FE6'
     },
     {
         type: 'fighting',
         img: `https://uploaddeimagens.com.br/images/004/430/295/full/12.png?1681450149`,
         color: '#CE4069',
-        colorCard: '#729F92'
+        colorCard: '#EC8484'
     },
     {
         type: 'ghost',
         img: `https://uploaddeimagens.com.br/images/004/430/296/full/13.png?1681450169`,
         color: '#5269AC',
-        colorCard: '#729F92'
+        colorCard: '#6699FF'
     },
     {
         type: 'ground',
         img: `https://uploaddeimagens.com.br/images/004/430/297/full/14.png?1681450189`,
         color: '#D97745',
-        colorCard: '#729F92'
+        colorCard: '#CC9966'
     },
     {
         type: 'ice',
         img: `https://uploaddeimagens.com.br/images/004/430/298/full/15.png?1681450209`,
         color: '#74CEC0',
-        colorCard: '#729F92'
+        colorCard: '#6699ff'
     },
     {
         type: 'psychic',
         img: `https://uploaddeimagens.com.br/images/004/430/299/full/16.png?1681450227`,
-        color: '#F67176',
-        colorCard: '#729F92'
+        color: '#FF0000',
+        colorCard: '#EC8484'
     },
     {
         type: 'rock',
         img: `https://uploaddeimagens.com.br/images/004/430/300/full/17.png?1681450246`,
-        color: '#C7B78B',
-        colorCard: '#729F92'
+        color: '#A52A2A',
+        colorCard: '#CC9966'
     },
     {
         type: 'steel',
         img: `https://uploaddeimagens.com.br/images/004/430/302/full/18.png?1681450265`,
-        color: '#BBBBBB',
-        colorCard: '#729F92'
+        color: '#666666',
+        colorCard: '#808080'
     },
 ]
