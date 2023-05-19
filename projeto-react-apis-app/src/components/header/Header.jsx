@@ -26,7 +26,6 @@ export function Header({ pokemonName }) {
 
     return (
         <>
-            {/* Pokelist */}
             {location.pathname === '/' &&
                 <s.HeaderContainer>
                     <s.LogoPokedex onClick={() => goToPage(navigate, '/')} src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="pokelogo" />
@@ -35,7 +34,6 @@ export function Header({ pokemonName }) {
                 </s.HeaderContainer>
             }
 
-            {/* Pokédex */}
             {location.pathname === '/pokedex' &&
                 <s.HeaderContainer>
                     <s.TitlePokedexPage onClick={() => goToPage(navigate, '/')} >Todos Pokémons</s.TitlePokedexPage>
@@ -43,7 +41,6 @@ export function Header({ pokemonName }) {
                 </s.HeaderContainer>
             }
 
-            {/* Details */}
             {location.pathname.includes('details') &&
                 <s.HeaderContainer>
                     <s.TitlePokedexPage onClick={() => goToPage(navigate, '/')} >Todos Pokémons</s.TitlePokedexPage>
