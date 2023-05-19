@@ -75,7 +75,7 @@ export const ContainerBaseStats = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1.1875rem;
+    padding: 1.18rem;
 `
 export const TitleBaseStats = styled.h3`
     font-family: 'Inter';
@@ -112,7 +112,8 @@ export const ValueStat = styled.div`
     margin-right: 1rem;
 `
 export const Table = styled.div`
-    width: ${({base})=> base}%;
+    text-align: left;
+    width: ${({ base }) => base}px;
     height: 12px;
     border-radius: 12px;
     background-color: ${({base})=> base <= 50 ? '#ff7c2e' : '#ffdd69' } ;
